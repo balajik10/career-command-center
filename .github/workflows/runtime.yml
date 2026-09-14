@@ -93,7 +93,7 @@ jobs:
           elif os.environ['INPUT_VERIFY_WRITE'] == 'true':
               raise SystemExit('WRITE_PROBE_REQUIRES_DOCTOR_MODE')
           PY
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: balajik10/career-command-center
           ref: ${{ inputs.implementation_sha }}
