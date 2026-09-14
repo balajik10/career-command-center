@@ -1,0 +1,7 @@
+From: candidate@example.com
+To: candidate@example.com
+Subject: Synthetic job alert
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<a href="https://www.linkedin.com/jobs/view/123?utm_source=email">Software Engineer I</a><img src="https://tracking.example.com/pixel"><a href="https://redirect.example.com/click?token=secret">Unsafe redirect</a>

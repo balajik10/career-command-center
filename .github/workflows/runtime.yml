@@ -1,0 +1,134 @@
+name: Private runtime implementation
+"on":
+  workflow_call:
+    inputs:
+      implementation_sha:
+        required: true
+        type: string
+      mode:
+        required: true
+        type: string
+      dry_run:
+        required: false
+        default: true
+        type: boolean
+      source:
+        required: false
+        default: ''
+        type: string
+      send_alerts:
+        required: false
+        default: false
+        type: boolean
+    secrets:
+      GOOGLE_SHEET_ID:
+        required: false
+      WIF_PROVIDER:
+        required: false
+      WIF_SERVICE_ACCOUNT:
+        required: false
+      GOOGLE_SERVICE_ACCOUNT_JSON_B64:
+        required: false
+      PRIVATE_PROFILE_YAML_B64:
+        required: false
+      PRIVACY_HMAC_KEY:
+        required: false
+      ALERT_RECIPIENT_EMAIL:
+        required: false
+      GMAIL_ADDRESS:
+        required: false
+      GMAIL_READ_CLIENT_ID:
+        required: false
+      GMAIL_READ_CLIENT_SECRET:
+        required: false
+      GMAIL_READ_REFRESH_TOKEN:
+        required: false
+      GMAIL_SEND_CLIENT_ID:
+        required: false
+      GMAIL_SEND_CLIENT_SECRET:
+        required: false
+      GMAIL_SEND_REFRESH_TOKEN:
+        required: false
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  execute:
+    if: >-
+      github.repository_owner == 'balajik10' &&
+      github.event.repository.private == true &&
+      startsWith(github.repository, 'balajik10/career-command-center-runtime') &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.mode == 'full' && 10 || inputs.mode == 'maintenance' && 8 || (inputs.mode == 'morning' || inputs.mode == 'evening') && 3 || 4 }}
+    env:
+      IMPLEMENTATION_SHA: ${{ inputs.implementation_sha }}
+      INPUT_MODE: ${{ inputs.mode }}
+      INPUT_DRY_RUN: ${{ inputs.dry_run }}
+      INPUT_SOURCE: ${{ inputs.source }}
+      INPUT_SEND_ALERTS: ${{ inputs.send_alerts }}
+    steps:
+      - name: Validate caller inputs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os, re
+          if not re.fullmatch(r'[0-9a-f]{40}', os.environ['IMPLEMENTATION_SHA']) or set(os.environ['IMPLEMENTATION_SHA']) == {'0'}:
+              raise SystemExit('SETUP_REQUIRED_IMPLEMENTATION_SHA')
+          if os.environ['INPUT_MODE'] not in {'incremental', 'full', 'morning', 'evening', 'maintenance'}:
+              raise SystemExit('INVALID_MODE')
+          if not re.fullmatch(r'[a-zA-Z0-9_-]{0,100}', os.environ['INPUT_SOURCE']):
+              raise SystemExit('INVALID_SOURCE')
+          if os.environ['INPUT_DRY_RUN'] == 'true' and os.environ['INPUT_SEND_ALERTS'] == 'true':
+              raise SystemExit('DRY_RUN_CANNOT_SEND')
+          PY
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: balajik10/career-command-center
+          ref: ${{ inputs.implementation_sha }}
+          persist-credentials: false
+      - name: Verify reviewed implementation
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "$IMPLEMENTATION_SHA"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff
+      - run: uv sync --locked
+      - name: Authorize Sheets with keyless federation
+        if: vars.SHEETS_AUTH_MODE == 'wif'
+        uses: google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+          create_credentials_file: true
+          export_environment_variables: true
+      - name: Run validated private mode
+        run: uv run career-radar run-scheduled
+        env:
+          TRACKER_ENABLED: ${{ vars.TRACKER_ENABLED || 'false' }}
+          SCHEDULER: ${{ vars.SCHEDULER || 'disabled' }}
+          ZERO_COST_MODE: 'true'
+          APP_TIMEZONE: Asia/Kolkata
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SERVICE_ACCOUNT_JSON_B64: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON_B64 }}
+          PRIVATE_PROFILE_YAML_B64: ${{ secrets.PRIVATE_PROFILE_YAML_B64 }}
+          PRIVACY_HMAC_KEY: ${{ secrets.PRIVACY_HMAC_KEY }}
+          PRIVACY_HMAC_KEY_VERSION: ${{ vars.PRIVACY_HMAC_KEY_VERSION || 'v1' }}
+          ALERT_RECIPIENT_EMAIL: ${{ secrets.ALERT_RECIPIENT_EMAIL }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_AUTH_MODE: oauth
+          GMAIL_READ_CLIENT_ID: ${{ secrets.GMAIL_READ_CLIENT_ID }}
+          GMAIL_READ_CLIENT_SECRET: ${{ secrets.GMAIL_READ_CLIENT_SECRET }}
+          GMAIL_READ_REFRESH_TOKEN: ${{ secrets.GMAIL_READ_REFRESH_TOKEN }}
+          GMAIL_SEND_CLIENT_ID: ${{ secrets.GMAIL_SEND_CLIENT_ID }}
+          GMAIL_SEND_CLIENT_SECRET: ${{ secrets.GMAIL_SEND_CLIENT_SECRET }}
+          GMAIL_SEND_REFRESH_TOKEN: ${{ secrets.GMAIL_SEND_REFRESH_TOKEN }}
+          GMAIL_OAUTH_IN_PRODUCTION: ${{ vars.GMAIL_OAUTH_IN_PRODUCTION || 'false' }}
+          GMAIL_LABEL: ${{ vars.GMAIL_LABEL || 'JobRadar/Incoming' }}
+          GMAIL_SENDER_ALLOWLIST: ${{ vars.GMAIL_SENDER_ALLOWLIST }}
+          BUDGET_VERIFIED_AT: ${{ vars.BUDGET_VERIFIED_AT }}
+          INCLUDED_PRIVATE_MINUTES_REMAINING: ${{ vars.INCLUDED_PRIVATE_MINUTES_REMAINING }}
+          PAID_OVERAGE_DISABLED: ${{ vars.PAID_OVERAGE_DISABLED || 'false' }}
+          ACCOUNT_RESERVE_MINUTES: ${{ vars.ACCOUNT_RESERVE_MINUTES || '100' }}

@@ -1,0 +1,3643 @@
+# Neutral company catalogue; not a personal watchlist or a claim of automated coverage.
+schema_version: 1
+companies:
+- source_id: amazon
+  company: Amazon
+  category: global_technology
+  provider: manual
+  url: https://www.amazon.jobs/en/
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: MANUAL_ONLY
+  coverage_state: NATIVE_ALERT_ONLY
+  health_state: UNKNOWN
+  cost_class: free
+  notes: Official careers link verified 2026-09-14; user opens manually and may configure
+    native alerts. No automatic page requests.
+- source_id: google
+  company: Google
+  category: global_technology
+  provider: manual
+  url: https://www.google.com/about/careers/applications/
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: MANUAL_ONLY
+  coverage_state: NATIVE_ALERT_ONLY
+  health_state: UNKNOWN
+  cost_class: free
+  notes: Official careers link verified 2026-09-14; user opens manually and may configure
+    native alerts. No automatic page requests.
+- source_id: microsoft
+  company: Microsoft
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: apple
+  company: Apple
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: meta
+  company: Meta
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: adobe
+  company: Adobe
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: oracle
+  company: Oracle
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ibm
+  company: IBM
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: salesforce
+  company: Salesforce
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: sap
+  company: SAP
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: intel
+  company: Intel
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: nvidia
+  company: NVIDIA
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: amd
+  company: AMD
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: qualcomm
+  company: Qualcomm
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cisco
+  company: Cisco
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: dell-technologies
+  company: Dell Technologies
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: hewlett-packard-enterprise
+  company: Hewlett Packard Enterprise
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: hp
+  company: HP
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: lenovo
+  company: Lenovo
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: samsung
+  company: Samsung
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: sony
+  company: Sony
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ericsson
+  company: Ericsson
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: nokia
+  company: Nokia
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: broadcom
+  company: Broadcom
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: arm
+  company: Arm
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: texas-instruments
+  company: Texas Instruments
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: micron-technology
+  company: Micron Technology
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: applied-materials
+  company: Applied Materials
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: lam-research
+  company: Lam Research
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: asml
+  company: ASML
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: synopsys
+  company: Synopsys
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cadence-design-systems
+  company: Cadence Design Systems
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: siemens
+  company: Siemens
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: bosch
+  company: Bosch
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: philips
+  company: Philips
+  category: global_technology
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: flipkart
+  company: Flipkart
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: myntra
+  company: Myntra
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: meesho
+  company: Meesho
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: swiggy
+  company: Swiggy
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zomato
+  company: Zomato
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zepto
+  company: Zepto
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: bigbasket
+  company: BigBasket
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: blinkit
+  company: Blinkit
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: urban-company
+  company: Urban Company
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ola
+  company: Ola
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: uber
+  company: Uber
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: rapido
+  company: Rapido
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: makemytrip
+  company: MakeMyTrip
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cleartrip
+  company: Cleartrip
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ixigo
+  company: ixigo
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: yatra
+  company: Yatra
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: booking-com
+  company: Booking.com
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: expedia-group
+  company: Expedia Group
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: airbnb
+  company: Airbnb
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: agoda
+  company: Agoda
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: tripadvisor
+  company: Tripadvisor
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: oyo
+  company: OYO
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: delhivery
+  company: Delhivery
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: shiprocket
+  company: Shiprocket
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: porter
+  company: Porter
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: blackbuck
+  company: BlackBuck
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: udaan
+  company: Udaan
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: nobroker
+  company: NoBroker
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: housing-com
+  company: Housing.com
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: magicbricks
+  company: Magicbricks
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cardekho
+  company: CarDekho
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cars24
+  company: Cars24
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: spinny
+  company: Spinny
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: olx
+  company: OLX
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: quikr
+  company: Quikr
+  category: consumer_marketplaces
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: razorpay
+  company: Razorpay
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: phonepe
+  company: PhonePe
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: paytm
+  company: Paytm
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cred
+  company: CRED
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: groww
+  company: Groww
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zerodha
+  company: Zerodha
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: upstox
+  company: Upstox
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: angel-one
+  company: Angel One
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: dhan
+  company: Dhan
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: indmoney
+  company: INDmoney
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: smallcase
+  company: Smallcase
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: fi
+  company: Fi
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: jupiter
+  company: Jupiter
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: slice
+  company: Slice
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: navi
+  company: Navi
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: kreditbee
+  company: KreditBee
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: moneyview
+  company: Moneyview
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: lendingkart
+  company: Lendingkart
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: perfios
+  company: Perfios
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: m2p-fintech
+  company: M2P Fintech
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cashfree-payments
+  company: Cashfree Payments
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: juspay
+  company: Juspay
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: pine-labs
+  company: Pine Labs
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: bharatpe
+  company: BharatPe
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: payu
+  company: PayU
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: paypal
+  company: PayPal
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: stripe
+  company: Stripe
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: adyen
+  company: Adyen
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: visa
+  company: Visa
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: mastercard
+  company: Mastercard
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: american-express
+  company: American Express
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: wise
+  company: Wise
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: revolut
+  company: Revolut
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: fis
+  company: FIS
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: fiserv
+  company: Fiserv
+  category: fintech_payments
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: jpmorgan-chase
+  company: JPMorgan Chase
+  category: banking_insurance
+  provider: manual
+  url: https://www.jpmorganchase.com/careers
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: MANUAL_ONLY
+  coverage_state: NATIVE_ALERT_ONLY
+  health_state: UNKNOWN
+  cost_class: free
+  notes: Official careers link verified 2026-09-14; user opens manually and may configure
+    native alerts. No automatic page requests.
+- source_id: goldman-sachs
+  company: Goldman Sachs
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: morgan-stanley
+  company: Morgan Stanley
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: bank-of-america
+  company: Bank of America
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: wells-fargo
+  company: Wells Fargo
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: citigroup
+  company: Citigroup
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: hsbc
+  company: HSBC
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: barclays
+  company: Barclays
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: deutsche-bank
+  company: Deutsche Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ubs
+  company: UBS
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: standard-chartered
+  company: Standard Chartered
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: bnp-paribas
+  company: BNP Paribas
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: societe-generale
+  company: Societe Generale
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: natwest-group
+  company: NatWest Group
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: lloyds-banking-group
+  company: Lloyds Banking Group
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: anz
+  company: ANZ
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: commonwealth-bank
+  company: Commonwealth Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: dbs-bank
+  company: DBS Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: hdfc-bank
+  company: HDFC Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: icici-bank
+  company: ICICI Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: axis-bank
+  company: Axis Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: kotak-mahindra-bank
+  company: Kotak Mahindra Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: state-bank-of-india
+  company: State Bank of India
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: idfc-first-bank
+  company: IDFC FIRST Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: federal-bank
+  company: Federal Bank
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: acko
+  company: Acko
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: digit-insurance
+  company: Digit Insurance
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: policybazaar
+  company: Policybazaar
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zopper
+  company: Zopper
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zurich-insurance
+  company: Zurich Insurance
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: allianz
+  company: Allianz
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: axa
+  company: AXA
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: metlife
+  company: MetLife
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: prudential-financial
+  company: Prudential Financial
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: chubb
+  company: Chubb
+  category: banking_insurance
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zoho
+  company: Zoho
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: freshworks
+  company: Freshworks
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: chargebee
+  company: Chargebee
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: browserstack
+  company: BrowserStack
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: postman
+  company: Postman
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: druva
+  company: Druva
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: icertis
+  company: Icertis
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: darwinbox
+  company: Darwinbox
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: keka
+  company: Keka
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: leena-ai
+  company: Leena AI
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: whatfix
+  company: Whatfix
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: clevertap
+  company: CleverTap
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: moengage
+  company: MoEngage
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: webengage
+  company: WebEngage
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: capillary-technologies
+  company: Capillary Technologies
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: unicommerce
+  company: Unicommerce
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: exotel
+  company: Exotel
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: leadsquared
+  company: LeadSquared
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: highradius
+  company: HighRadius
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zenoti
+  company: Zenoti
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: innovaccer
+  company: Innovaccer
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: amagi
+  company: Amagi
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: inmobi
+  company: InMobi
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: gupshup
+  company: Gupshup
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: sprinklr
+  company: Sprinklr
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: servicenow
+  company: ServiceNow
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: workday
+  company: Workday
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: atlassian
+  company: Atlassian
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: hubspot
+  company: HubSpot
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zendesk
+  company: Zendesk
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: twilio
+  company: Twilio
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zoom
+  company: Zoom
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: docusign
+  company: DocuSign
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: intuit
+  company: Intuit
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: autodesk
+  company: Autodesk
+  category: enterprise_saas
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: github
+  company: GitHub
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: gitlab
+  company: GitLab
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: hashicorp
+  company: HashiCorp
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cloudflare
+  company: Cloudflare
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: datadog
+  company: Datadog
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: new-relic
+  company: New Relic
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: grafana-labs
+  company: Grafana Labs
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: elastic
+  company: Elastic
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: mongodb
+  company: MongoDB
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: redis
+  company: Redis
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: confluent
+  company: Confluent
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: databricks
+  company: Databricks
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: snowflake
+  company: Snowflake
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cloudera
+  company: Cloudera
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: couchbase
+  company: Couchbase
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: aerospike
+  company: Aerospike
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: scylladb
+  company: ScyllaDB
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: singlestore
+  company: SingleStore
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: yugabyte
+  company: Yugabyte
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cockroach-labs
+  company: Cockroach Labs
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: clickhouse
+  company: ClickHouse
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: supabase
+  company: Supabase
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: neon
+  company: Neon
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: planetscale
+  company: PlanetScale
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: vercel
+  company: Vercel
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: netlify
+  company: Netlify
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: render
+  company: Render
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: digitalocean
+  company: DigitalOcean
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: akamai
+  company: Akamai
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: fastly
+  company: Fastly
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: aiven
+  company: Aiven
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: sentry
+  company: Sentry
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: snyk
+  company: Snyk
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: harness
+  company: Harness
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: circleci
+  company: CircleCI
+  category: developer_cloud_data
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: walmart-global-tech
+  company: Walmart Global Tech
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: target
+  company: Target
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: lowe-s
+  company: Lowe's
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: the-home-depot
+  company: The Home Depot
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: tesco
+  company: Tesco
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ikea
+  company: IKEA
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: maersk
+  company: Maersk
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: fedex
+  company: FedEx
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ups
+  company: UPS
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: dhl
+  company: DHL
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: shell
+  company: Shell
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: bp
+  company: BP
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: exxonmobil
+  company: ExxonMobil
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: chevron
+  company: Chevron
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ge-aerospace
+  company: GE Aerospace
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ge-healthcare
+  company: GE HealthCare
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: honeywell
+  company: Honeywell
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: abb
+  company: ABB
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: schneider-electric
+  company: Schneider Electric
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: eaton
+  company: Eaton
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: emerson
+  company: Emerson
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: johnson-controls
+  company: Johnson Controls
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: rockwell-automation
+  company: Rockwell Automation
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: caterpillar
+  company: Caterpillar
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: john-deere
+  company: John Deere
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: volvo-group
+  company: Volvo Group
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: mercedes-benz
+  company: Mercedes-Benz
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: bmw-group
+  company: BMW Group
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: volkswagen-group
+  company: Volkswagen Group
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ford-motor-company
+  company: Ford Motor Company
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: general-motors
+  company: General Motors
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: boeing
+  company: Boeing
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: airbus
+  company: Airbus
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: rtx
+  company: RTX
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: thales
+  company: Thales
+  category: engineering_centers
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: palo-alto-networks
+  company: Palo Alto Networks
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: crowdstrike
+  company: CrowdStrike
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zscaler
+  company: Zscaler
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: fortinet
+  company: Fortinet
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: check-point-software
+  company: Check Point Software
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: sentinelone
+  company: SentinelOne
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: rubrik
+  company: Rubrik
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cohesity
+  company: Cohesity
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: commvault
+  company: Commvault
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: okta
+  company: Okta
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: cyberark
+  company: CyberArk
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: wiz
+  company: Wiz
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: netskope
+  company: Netskope
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: tenable
+  company: Tenable
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: rapid7
+  company: Rapid7
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: dream11
+  company: Dream11
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: games24x7
+  company: Games24x7
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: mpl
+  company: MPL
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: zynga
+  company: Zynga
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: electronic-arts
+  company: Electronic Arts
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: ubisoft
+  company: Ubisoft
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: netflix
+  company: Netflix
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: spotify
+  company: Spotify
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: disney
+  company: Disney
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: warner-bros-discovery
+  company: Warner Bros. Discovery
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: jiostar
+  company: JioStar
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: sharechat
+  company: ShareChat
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: dailyhunt
+  company: Dailyhunt
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: inshorts
+  company: Inshorts
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: glance
+  company: Glance
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: pocket-fm
+  company: Pocket FM
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: pratilipi
+  company: Pratilipi
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: lokal
+  company: Lokal
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: yellow-ai
+  company: Yellow.ai
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.
+- source_id: sarvam-ai
+  company: Sarvam AI
+  category: security_media_startups
+  provider: manual
+  url: ''
+  enabled: false
+  access_mode: MANUAL_REVIEW
+  policy_state: PENDING_REVIEW
+  coverage_state: UNVALIDATED
+  health_state: UNKNOWN
+  cost_class: unknown
+  notes: Catalogue only. Supply observed official URL, review policy, and pass contract
+    validation before enabling.

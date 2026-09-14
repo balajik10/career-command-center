@@ -1,0 +1,72 @@
+name: Career Command Center private schedule
+"on":
+  schedule:
+    - cron: '47 6,9,12,15,18,21 * * 1-5'
+      timezone: Asia/Kolkata
+    - cron: '47 9,15,21 * * 0,6'
+      timezone: Asia/Kolkata
+    - cron: '23 2 * * *'
+      timezone: Asia/Kolkata
+    - cron: '11 8 * * *'
+      timezone: Asia/Kolkata
+    - cron: '11 19 * * *'
+      timezone: Asia/Kolkata
+    - cron: '43 3 * * 0'
+      timezone: Asia/Kolkata
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [incremental, full, morning, evening, maintenance]
+        default: incremental
+        required: true
+      dry_run:
+        type: boolean
+        default: true
+      source:
+        type: string
+        default: ''
+      send_alerts:
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: career-command-center-production
+  queue: max
+jobs:
+  run:
+    if: >-
+      github.repository_owner == 'balajik10' &&
+      github.event.repository.private == true &&
+      github.ref == 'refs/heads/main' &&
+      (vars.TRACKER_ENABLED == 'true' || github.event_name == 'workflow_dispatch')
+    # Replace BOTH all-zero values with the same reviewed public commit before pushing.
+    uses: balajik10/career-command-center/.github/workflows/runtime.yml@0000000000000000000000000000000000000000
+    with:
+      implementation_sha: '0000000000000000000000000000000000000000'
+      mode: >-
+        ${{ github.event_name == 'workflow_dispatch' && inputs.mode ||
+        (github.event.schedule == '23 2 * * *' && 'full' ||
+        github.event.schedule == '11 8 * * *' && 'morning' ||
+        github.event.schedule == '11 19 * * *' && 'evening' ||
+        github.event.schedule == '43 3 * * 0' && 'maintenance' || 'incremental') }}
+      dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+      source: ${{ inputs.source || '' }}
+      send_alerts: ${{ github.event_name == 'schedule' || inputs.send_alerts || false }}
+    secrets:
+      GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+      WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
+      WIF_SERVICE_ACCOUNT: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+      GOOGLE_SERVICE_ACCOUNT_JSON_B64: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON_B64 }}
+      PRIVATE_PROFILE_YAML_B64: ${{ secrets.PRIVATE_PROFILE_YAML_B64 }}
+      PRIVACY_HMAC_KEY: ${{ secrets.PRIVACY_HMAC_KEY }}
+      ALERT_RECIPIENT_EMAIL: ${{ secrets.ALERT_RECIPIENT_EMAIL }}
+      GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+      GMAIL_READ_CLIENT_ID: ${{ secrets.GMAIL_READ_CLIENT_ID }}
+      GMAIL_READ_CLIENT_SECRET: ${{ secrets.GMAIL_READ_CLIENT_SECRET }}
+      GMAIL_READ_REFRESH_TOKEN: ${{ secrets.GMAIL_READ_REFRESH_TOKEN }}
+      GMAIL_SEND_CLIENT_ID: ${{ secrets.GMAIL_SEND_CLIENT_ID }}
+      GMAIL_SEND_CLIENT_SECRET: ${{ secrets.GMAIL_SEND_CLIENT_SECRET }}
+      GMAIL_SEND_REFRESH_TOKEN: ${{ secrets.GMAIL_SEND_REFRESH_TOKEN }}

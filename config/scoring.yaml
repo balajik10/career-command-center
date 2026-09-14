@@ -1,0 +1,69 @@
+version: '1'
+data_quality:
+  drop_threshold: 0.7
+  min_completed_samples: 3
+  min_baseline_jobs: 10
+fit_weights:
+  role: 20.0
+  experience: 15.0
+  skills: 25.0
+  evidence: 15.0
+  location: 10.0
+  responsibility: 10.0
+  education: 5.0
+priority_weights:
+  fit: 55.0
+  freshness: 15.0
+  experience: 8.0
+  official_route: 7.0
+  target_tier: 5.0
+  compensation: 4.0
+  contact: 4.0
+  deadline: 2.0
+freshness:
+  HOT_0_6H: 1.0
+  EARLY_6_24H: 0.9
+  FRESH_1_3D: 0.65
+  OPEN_4_7D: 0.35
+  AGING_8_14D: 0.1
+  STALE_15D_PLUS: 0.0
+  OBSERVED_NEW_DATE_UNKNOWN: 0.75
+  BASELINE_DATE_UNKNOWN: 0.0
+experience:
+  IN_RANGE: 1.0
+  MEETS: 1.0
+  AMBIGUOUS: 0.75
+  NEAR_MATCH_IN_SCOPE: 0.55
+  STRETCH: 0.25
+  OUT_OF_SCOPE: 0.0
+contact:
+  CONFIRMED_REFERRER: 1.0
+  WARM_CONNECTION: 0.75
+  PERMITTED_RECRUITER: 0.4
+  PERMITTED_TEAM_CHANNEL: 0.4
+  NONE: 0.0
+p0_fit: 75
+p0_priority: 85
+p1_fit: 60
+p1_priority: 70
+p2_priority: 50
+p0_age_hours: 24
+p1_age_hours: 192
+stale_penalty: 10
+unverified_penalty: 10
+duplicate_penalty: 25
+dedupe:
+  title_threshold: 94
+  description_threshold: 92
+  gray_title_threshold: 88
+  gray_description_threshold: 80
+  max_days: 45
+private_value_keys:
+- current_base_lpa
+- target_base_lpa
+- company_tiers
+sla_hours:
+  P0: 2
+  P1: 12
+  P2: 48
+  P3: 168

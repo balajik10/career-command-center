@@ -1,0 +1,51 @@
+name: Example Candidate
+location: Bengaluru, India
+full_time_start: 2024-06
+internship_start: 2024-01
+internship_end: 2024-05
+graduation_year: 2024
+skills:
+- Java
+- Python
+- Spring Boot
+- PostgreSQL
+- Redis
+- Kafka
+- Docker
+- distributed systems
+evidence:
+- evidence_id: synthetic-api
+  source: synthetic
+  outreach_safe_paraphrase: Built and tested a small Java API with database constraints.
+  allowed_atomic_claims:
+  - Built and tested a Java API with PostgreSQL constraints.
+  forbidden_extrapolations:
+  - exactly-once Kafka
+  - unlimited scale
+  tags:
+  - api
+  - backend
+  - reliability
+  technologies:
+  - Java
+  - PostgreSQL
+  - Spring Boot
+  allowed_in_outreach: true
+- evidence_id: synthetic-cache
+  source: synthetic
+  outreach_safe_paraphrase: Implemented a Redis cache and tested failure handling.
+  allowed_atomic_claims:
+  - Implemented a Redis cache and tested failure handling.
+  tags:
+  - backend
+  - reliability
+  - distributed systems
+  technologies:
+  - Redis
+  - Python
+  allowed_in_outreach: true
+current_base_lpa: null
+target_base_lpa: null
+company_tiers: {}
+github_url: ''
+linkedin_url: ''

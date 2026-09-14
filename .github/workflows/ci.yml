@@ -1,0 +1,34 @@
+name: CI
+"on":
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff
+      - run: uv sync --locked
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run mypy --strict src/career_radar
+      - run: uv run pytest --cov=career_radar --cov-branch --cov-report=json
+      - run: uv run python scripts/check_core_coverage.py
+      - run: uv run bandit -q -r src/career_radar
+      - run: uv run pip-audit
+      - run: uv run python scripts/verify_public_repo.py
+      - run: uv run python scripts/estimate_actions_budget.py
+      - run: uv run python -m build
+      - run: uv run career-radar scan --dry-run --offline-fixtures
+      - run: uv run career-radar digest --period morning --no-send
+      - run: uv run python scripts/verify_offline.py

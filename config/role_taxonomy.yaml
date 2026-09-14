@@ -1,0 +1,12 @@
+version: '1'
+families:
+  SOFTWARE: [SDE I, SDE-I, SDE 1, SWE I, Software Engineer-I, Software Engineer 1, Associate Software Engineer, Junior Software Engineer, Graduate Software Engineer, Member of Technical Staff, MTS, Application Developer]
+  BACKEND: [Backend Engineer, Backend Developer, Java Backend Engineer, Java Developer, Java Engineer, Spring Boot Engineer, API Engineer]
+  PLATFORM: [Platform Engineer, Infrastructure Software Engineer, Cloud Engineer]
+  RELIABILITY: [Site Reliability Engineer, Production Engineer, SRE]
+  FULL_STACK: [Full Stack Engineer, Full-Stack Engineer]
+  DISTRIBUTED_SYSTEMS: [Distributed Systems Engineer, Search Engineer, Ranking Engineer]
+development_scope_required: [PLATFORM, RELIABILITY, FULL_STACK]
+level_ii: retain_as_stretch_only_when_stated_minimum_at_most_three_and_no_senior_scope
+excluded_scope: [Senior, Sr, Staff, Lead, Principal, Architect, Manager, Director]
+excluded_families: [frontend, mobile, manual_qa, tech_support, sales, product_management]

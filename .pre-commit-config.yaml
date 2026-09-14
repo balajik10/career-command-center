@@ -1,0 +1,13 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: Ruff lint
+        entry: uv run ruff check
+        language: system
+        types: [python]
+      - id: public-boundary
+        name: Reject private tracked artifacts
+        entry: uv run python scripts/verify_public_repo.py
+        language: system
+        pass_filenames: false

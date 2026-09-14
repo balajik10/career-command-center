@@ -1,0 +1,109 @@
+version: '1'
+exact:
+  Java:
+  - java
+  Python:
+  - python
+  SQL:
+  - sql
+  Bash:
+  - bash
+  Spring Boot:
+  - spring boot
+  - springboot
+  - spring-boot
+  Spring Framework:
+  - spring framework
+  REST APIs:
+  - rest api
+  - restful
+  - rest apis
+  microservices:
+  - microservice
+  - microservices
+  distributed systems:
+  - distributed systems
+  PostgreSQL:
+  - postgresql
+  - postgres
+  MySQL:
+  - mysql
+  Redis:
+  - redis
+  Kafka:
+  - kafka
+  Kubernetes:
+  - kubernetes
+  - k8s
+  Docker:
+  - docker
+  AWS:
+  - aws
+  - amazon web services
+  GCP:
+  - gcp
+  - google cloud
+  Azure:
+  - azure
+  Grafana:
+  - grafana
+  Prometheus:
+  - prometheus
+  FastAPI:
+  - fastapi
+  - fast api
+  Aerospike:
+  - aerospike
+  Elasticsearch:
+  - elasticsearch
+  HBase:
+  - hbase
+  JPA:
+  - jpa
+  Hibernate:
+  - hibernate
+  Kotlin:
+  - kotlin
+  Go:
+  - golang
+  - go
+  C++:
+  - c++
+  JavaScript:
+  - javascript
+  React:
+  - react
+  - reactjs
+  GitHub Actions:
+  - github actions
+  Jenkins:
+  - jenkins
+  Maven:
+  - maven
+  PySpark:
+  - pyspark
+  Databricks:
+  - databricks
+  New Relic:
+  - new relic
+  Kibana:
+  - kibana
+  Zenduty:
+  - zenduty
+  SonarQube:
+  - sonarqube
+  multithreading:
+  - multithreading
+  - multi-threading
+  system design:
+  - system design
+related_only:
+  Spring Boot:
+  - Spring Framework
+  - JVM ecosystem
+never_infer:
+- JPA
+- Hibernate
+- Kotlin
+- Go
+- C++

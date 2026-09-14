@@ -1,0 +1,13 @@
+# Private runtime repository
+
+This template contains schedule configuration only. Never add job, contact, resume, compensation, draft, application or generated files here. State belongs in the private Google Sheet. The template is intentionally **disabled** until a reviewed public commit, private credentials, source approvals and budget readiness exist.
+
+1. Create a new **private** runtime repository under the expected owner and copy this directory into it. Set `TRACKER_ENABLED=false` and `SCHEDULER=disabled` before its first push.
+2. Replace both 40-zero placeholders in `.github/workflows/scheduled.yml` with the same reviewed public code commit SHA. If the public repository name differs, update both the caller `uses` reference and reusable implementation's explicit checkout repository in the public code.
+3. Configure individually named secrets through `scripts/configure_github.sh --repo OWNER/PRIVATE_RUNTIME_REPO --apply` from the public project. Do not upload app passwords; cloud credentials are OAuth-only. Prefer Sheets workload identity federation.
+4. Share only the target private Sheet with the Sheets service identity. Complete doctor, schema bootstrap, offline scan, live dry scan, one owner-only test notification, and idempotent real-run validation.
+5. Set recent account-wide included-minutes and no-paid-overage attestations, then select `SCHEDULER=github`. Enable `TRACKER_ENABLED=true` only when every readiness gate passes.
+
+The only production concurrency gate is this caller's `career-command-center-production` group with `queue: max`; do not cancel running writers or add the same group to the reusable workflow. All six schedules use Asia/Kolkata. UTC alternatives are documented in the public project's operations guide and must never be enabled alongside the IST set.
+
+Manual dispatch defaults to dry-run and no send. While tracking is disabled, that exact manual mode performs a real read-only Sheet scan after private identity, zero-cost and account-budget checks; sender credentials and scheduler activation are not required. Other write/send modes remain blocked until production readiness passes. Use full mode for bounded reconciliation; v1 does not expose a lookback override. Schedule delays and dropped runs are possible; inspect the private Sheet heartbeat and source due times. No production artifact upload or job/content summary is configured. Turn `TRACKER_ENABLED=false` before troubleshooting, switching to local scheduling or changing credentials.

@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "career-command-center"
+version = "0.1.0"
+description = "A private, evidence-backed, zero-paid-API career discovery command center"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "httpx>=0.28,<0.29", "pydantic>=2.11,<3", "pydantic-settings>=2.8,<3",
+  "beautifulsoup4>=4.13,<5", "defusedxml>=0.7,<1", "python-dateutil>=2.9,<3",
+  "rapidfuzz>=3.12,<4", "google-auth>=2.39,<3", "jinja2>=3.1.6,<4",
+  "typer>=0.16,<1", "pyyaml>=6.0.2,<7", "requests>=2.32,<3",
+]
+
+[project.scripts]
+career-radar = "career_radar.cli:app"
+
+[dependency-groups]
+dev = [
+  "pytest>=9.0.3,<10", "pytest-cov>=6,<8", "respx>=0.22,<1", "hypothesis>=6.130,<7",
+  "ruff>=0.11,<1", "mypy>=1.15,<2", "bandit>=1.8,<2", "pip-audit>=2.9,<3",
+  "build>=1.2,<2", "types-PyYAML>=6.0", "types-python-dateutil>=2.9",
+  "types-beautifulsoup4>=4.12", "types-defusedxml>=0.7", "croniter>=6,<7", "types-requests>=2.32",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/career_radar"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["google.auth.*", "google.oauth2.*", "google.auth", "croniter"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+branch = true
+source = ["career_radar"]
+
+[tool.coverage.report]
+show_missing = true
