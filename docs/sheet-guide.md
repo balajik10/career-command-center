@@ -20,7 +20,7 @@ All 28 tabs are defined in `sheets/schema.py`. Pale yellow cells are editable; s
 
 Application state lives in Applications, job facts in Jobs_Master, contact facts in Contacts, and drafts in Outreach. The [data dictionary](data-dictionary.md) identifies every key and user-owned column. Scheduled field-level writes exclude manual fields even if a stale fetched row contains them. An integration test injects a human edit between reading and writing and verifies it survives.
 
-Today, This_Week and This_Month are protected formula views. The spreadsheet locale is `en_IN`, timezone `Asia/Kolkata`; ISO UTC source timestamps are converted by formulas to IST before date boundaries are compared. Weeks start Monday 00:00 IST. Today also contains separate sections for due, overdue, P0/P1 and follow-up actions. A missing publication date is not a newly posted job: the queue displays `POSTED DATE UNKNOWN` and its first-seen proxy.
+Today, This_Week and This_Month are protected formula views. The spreadsheet uses the Google Sheets-supported English locale `en_GB` and timezone `Asia/Kolkata`; ISO UTC source timestamps are converted by formulas to IST before date boundaries are compared. Weeks start Monday 00:00 IST. Today also contains separate sections for due, overdue, P0/P1 and follow-up actions. A missing publication date is not a newly posted job: the queue displays `POSTED DATE UNKNOWN` and its first-seen proxy.
 
 ## Dashboard definitions
 

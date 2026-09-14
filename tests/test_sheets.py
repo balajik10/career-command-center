@@ -80,6 +80,10 @@ class SheetsHTTP:
             )
         if method == "POST" and url.endswith(":batchUpdate") and "/values" not in url:
             for req in kwargs["json"]["requests"]:
+                # Replay the live Sheets API rejection found during activation.
+                properties = req.get("updateSpreadsheetProperties", {}).get("properties", {})
+                if properties.get("locale") == "en_IN":
+                    return Response({"error": {"status": "INVALID_ARGUMENT"}}, 400)
                 if "addSheet" in req:
                     props = req["addSheet"]["properties"]
                     self.sheets[props["title"]] = props["sheetId"]
