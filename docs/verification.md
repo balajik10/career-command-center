@@ -1,6 +1,6 @@
 # Release verification
 
-Verification date: **2026-09-14**. Runtime: CPython 3.12.9 on macOS arm64; dependency resolution uses the committed `uv.lock`. Public CI repeats the gates on Ubuntu with Python 3.12. Local results do not claim that GitHub CI or live Google integrations have run.
+Verification date: **2026-09-14**. Runtime: CPython 3.12.9 on macOS arm64; dependency resolution uses the committed `uv.lock`. Public CI repeats the gates on Ubuntu with Python 3.12. Remote workflow results are recorded separately from the local results below; neither implies live Google integration success.
 
 ## Reproducible behavior
 
@@ -38,7 +38,7 @@ The Sheet dashboard has a reviewed numeric reference calculation and formula-str
 - **Sheet:** not created or connected. Bootstrap targets a user-created empty private spreadsheet. Live formatting, permissions, formulas, quota behavior, and write restoration remain credential-dependent.
 - **Email:** no live send attempt, no mailbox ingestion. Owner-send OAuth/SMTP code is tested with fakes. Gmail/IMAP collection, Workable, SmartRecruiters, Hacker News, and headless collection remain deferred or disabled as listed in the support matrix.
 - **Schedules:** present but disabled. The model estimates the worst calendar month; it does not verify this account's current shared allowance. Billing/overage attestations are mandatory before GitHub scheduling.
-- **GitHub:** local release code is prepared. Repository creation, publication, remote CI, and private dispatch results are reported separately after owner approval. No remote pass is inferred from local tests.
+- **GitHub:** public code and private runtime repositories were created after explicit owner approval. The first remote run exposed local SMTP test fixtures inheriting the runner's `GITHUB_ACTIONS=true`; the fixtures now explicitly select local identity while production gates remain enforced. Consult the final delivery record and repository Actions page for the latest reviewed-commit result. No remote pass is inferred from local tests, and no credentialed private dispatch has run.
 - **Configuration:** scoring weights and data-quality thresholds are Sheet-configurable; role/skill taxonomy and dedupe tuning limitations are described in `scoring.md`.
 - **Storage/recovery:** Google Sheets lacks multi-request database transactions. Use one scheduler/writer, bounded batch writes, post-write commit validation, and outbox recovery. Never infer exactly-once external delivery from deterministic notification IDs.
 

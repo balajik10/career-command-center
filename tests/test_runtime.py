@@ -20,6 +20,14 @@ NOW = datetime(2026, 9, 14, 6, tzinfo=UTC)
 KEY = "test" * 8  # Synthetic HMAC key; never a credential.
 
 
+@pytest.fixture(autouse=True)
+def isolated_config_environment(monkeypatch: pytest.MonkeyPatch) -> None:
+    # Each case declares its execution identity and credentials, including direct
+    # Settings constructors used to exercise local-only SMTP validation.
+    for field in Settings.model_fields:
+        monkeypatch.delenv(field.upper(), raising=False)
+
+
 def settings(**overrides: Any) -> Settings:
     values = {
         "_env_file": None,
