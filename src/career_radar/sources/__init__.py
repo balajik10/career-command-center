@@ -1,6 +1,7 @@
 """Supported adapter entry points. Parsing has no network side effects."""
 
 from career_radar.domain import FetchResult, RawJob, SourceDefinition
+from career_radar.sources.google_careers import parse_google_careers
 from career_radar.sources.parsers import (
     ParseError,
     parse_ashby,
@@ -11,6 +12,7 @@ from career_radar.sources.parsers import (
 )
 
 PARSERS = {
+    "google_careers": parse_google_careers,
     "greenhouse": parse_greenhouse,
     "lever": parse_lever,
     "ashby": parse_ashby,

@@ -809,6 +809,7 @@ def _update_missing(
             row["active"] = True
         elif (
             batch.source.access_mode in {"OFFICIAL_API", "PUBLIC_HTML_APPROVED"}
+            and batch.source.provider != "google_careers"
             and batch.complete
             and batch.outcome in {"SUCCESS_COMPLETE", "SUCCESS_EMPTY"}
         ):

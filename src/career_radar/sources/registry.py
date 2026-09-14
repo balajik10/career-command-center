@@ -9,6 +9,7 @@ import yaml
 
 from career_radar.domain import SourceDefinition
 from career_radar.security import SecurityError, canonical_url
+from career_radar.sources.google_careers import valid_search_url
 
 RequestPurpose = Literal["COLLECTION", "VALIDATION_PROBE"]
 
@@ -37,6 +38,8 @@ def check_policy(
         return
     if purpose != "COLLECTION":
         raise SecurityError("UNKNOWN_REQUEST_PURPOSE")
+    if source.provider == "google_careers" and not valid_search_url(url):
+        raise SecurityError("GOOGLE_FIRST_PAGE_ONLY")
     if not source.enabled or source.policy_state != "APPROVED":
         raise SecurityError("SOURCE_NOT_APPROVED")
     if source.access_mode not in {"OFFICIAL_API", "RSS_ATOM", "PUBLIC_HTML_APPROVED"}:

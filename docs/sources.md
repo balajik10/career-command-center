@@ -2,7 +2,7 @@
 
 Career Command Center collects only individually approved sources through documented public interfaces. A working parser is not evidence that a company permits recurring access. The committed neutral catalogue contains **280 companies across eight categories, 35 per category**. It contains **zero enabled automated sources**, **277 pending/unvalidated rows**, and **three explicit manual/native-alert routes**. This is a catalogue, not a claim of 280 live integrations or a private watchlist.
 
-Amazon, Google, and JPMorgan Chase have verified official careers links and explicit manual/native-alert routes. Their public careers pages were opened on 2026-09-14; no job extraction or recurring collection was enabled. The initial build used three of the maximum 50 company URL checks. All other career URLs are deliberately blank until observed from an official source. Never invent an ATS tenant to increase coverage numbers.
+Amazon, Google, and JPMorgan Chase start with verified official careers links and explicit manual/native-alert routes in the neutral catalogue. Google now also has a separately configurable first-page discovery adapter described below. Private source activation does not change the public catalogue defaults. Other career URLs remain blank until observed from an official source. Never invent an ATS tenant to increase coverage numbers.
 
 ## Supported interfaces
 
@@ -14,6 +14,7 @@ Amazon, Google, and JPMorgan Chase have verified official careers links and expl
 | RSS / Atom | Implemented; synthetic contract-tested | Entries, title, link, description and source publication date | Unknown/changed feed schema quarantined |
 | Sitemap → JSON-LD | Implemented; synthetic contract-tested; named human policy approval required | Bounded same-origin URL-set links, detail-page JobPosting objects and graphs | Sitemap indexes require explicit individual source onboarding |
 | JobPosting JSON-LD | Implemented; synthetic contract-tested; named human policy approval required | Title, organization, location, ID, source date, description, salary and original page link | No script execution or reverse-engineered endpoints |
+| Google Careers visible search page | Implemented; bounded discovery only | Up to 20 visible cards from one approved search URL; title, locations, minimum qualifications and official link; no publication-date inference | No pagination, full-board claim or closure inference; native alerts supplement coverage |
 | User-owned CSV / TSV / JSON jobs | Implemented; local import | `id`, `company`, `title`, `url`, optional `apply_url`, `location`, `description`, `posted_at` | Invalid rows fail the import for review |
 | User-owned `.eml` alerts | Implemented; synthetic contract-tested | Sender allowlist, local HTML anchor extraction, minimal title/link observations and HMAC ID; token-bearing redirect URLs discarded | Unrecognized templates and plain-text-only alerts require manual CSV/JSON import |
 | Live Gmail / IMAP | Not implemented in this release | No mailbox access requested | Export `.eml` locally and import after configuring privacy key |
@@ -22,6 +23,14 @@ Amazon, Google, and JPMorgan Chase have verified official careers links and expl
 | Workday CXS / private XHR / browser collection | Unsupported | No endpoint discovery, session reuse, login automation, anti-bot workaround, proxies or headless browser | Official documented feed, approved public JSON-LD or manual route |
 
 All supported adapters have sanitized success, empty, schema-change, malformed/date, size-limit, duplication, and blocked/rate-limited transport contracts. Fixtures are authored examples, not captured authenticated traffic. Invalid date text is retained as untrusted source evidence for the normalization layer to label unknown; it never becomes the fetch time.
+
+### Google Careers discovery scope
+
+The `google_careers` provider reads visible HTML from an approved `https://www.google.com/about/careers/applications/jobs/results/` search URL. The search filters and sort order are chosen through the official UI and recorded in private source configuration. Requests containing a `page` parameter are rejected before network access, including encoded parameter names. The adapter never calls private endpoints, follows pagination, uses an account session or executes JavaScript.
+
+This is a first-page discovery window, not a complete inventory. A successful run means the visible page passed its count/card contract. At most 20 jobs are observed; older jobs and jobs arriving and leaving the window between scans can be missed. Descriptions contain only the displayed minimum qualifications, and dates remain unknown. Jobs leaving this window never acquire missing/closure counts. The Sources notes must display these limits. Native Google job alerts can supplement discovery.
+
+Review the current [Google terms](https://policies.google.com/terms) and [robots rules](https://www.google.com/robots.txt) before enabling an exact search URL. The rules checked on 2026-09-14 exclude paginated job searches. This adapter does not establish coverage or access permission for any other company.
 
 Greenhouse resumes bounded detail collection using a fresh complete board inventory on every run. A listing hash includes the documented, timezone-aware `updated_at` value and identity/title/location/URL metadata. Only successfully normalized details whose canonical Sheet rows have committed receive a small per-job checkpoint in `_System_State`; the cache is never embedded in a large Sources cell. Restored checkpoints are trusted only while their canonical job and exact source appearance still exist. Unchanged versions skip detail requests, and current listing IDs still prove existing jobs present. Changed versions are fetched again, including previously tracked jobs whose titles leave the engineering filter. Cached observations retain elapsed age rather than becoming fresh again.
 
