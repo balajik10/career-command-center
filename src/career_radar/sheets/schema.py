@@ -221,7 +221,7 @@ def presentation_requests(sheet_ids: dict[str, int]) -> list[dict[str, Any]]:
     requests: list[dict[str, Any]] = [
         {
             "updateSpreadsheetProperties": {
-                "properties": {"timeZone": "Asia/Kolkata", "locale": "en_IN"},
+                "properties": {"timeZone": "Asia/Kolkata", "locale": "en_GB"},
                 "fields": "timeZone,locale",
             }
         }

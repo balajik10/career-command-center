@@ -33,7 +33,14 @@ from career_radar.orchestration.pipeline import (
     uid,
 )
 from career_radar.orchestration.planner import route_schedule, scheduler_ready
-from career_radar.runtime import configured_sources, live_book, live_outbox, readiness, scan_live
+from career_radar.runtime import (
+    configured_sources,
+    live_book,
+    live_outbox,
+    readiness,
+    require_github_wif,
+    scan_live,
+)
 from career_radar.security import SecurityError, canonical_url, private_token
 from career_radar.settings import Settings
 from career_radar.sheets import SCHEMA, BaseWorkbook, FakeWorkbook
@@ -873,9 +880,9 @@ def run_scheduled() -> None:
         cron = os.getenv("SCHEDULE_CRON", "")
         if cron:
             mode = route_schedule(cron)
-        if mode not in {"incremental", "full", "morning", "evening", "maintenance"}:
+        if mode not in {"incremental", "full", "morning", "evening", "maintenance", "doctor"}:
             raise ValueError("INVALID_MODE")
-        for key in ("INPUT_DRY_RUN", "INPUT_SEND_ALERTS"):
+        for key in ("INPUT_DRY_RUN", "INPUT_SEND_ALERTS", "INPUT_VERIFY_WRITE"):
             if os.getenv(key, "false").lower() not in {"true", "false"}:
                 raise ValueError("INVALID_BOOLEAN_INPUT")
         if os.getenv("INPUT_LOOKBACK_HOURS", ""):
@@ -890,6 +897,29 @@ def run_scheduled() -> None:
         manual_dispatch = (
             settings.github_actions and os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch"
         )
+        verify_write = os.getenv("INPUT_VERIFY_WRITE", "false").lower() == "true"
+        if mode == "doctor":
+            if not manual_dispatch or settings.tracker_enabled:
+                raise ValueError("DOCTOR_REQUIRES_DISABLED_MANUAL_GITHUB_RUN")
+            if dry or send or source or not verify_write:
+                raise ValueError("DOCTOR_REQUIRES_EXPLICIT_WRITE_PROBE_NO_SEND")
+            if not settings.zero_cost_mode or settings.budget_state(datetime.now(UTC)) != "READY":
+                raise ValueError("DOCTOR_BUDGET_OR_ZERO_COST_BLOCKED")
+            require_github_wif(settings)
+            checks = readiness(settings, verify_write=True, verify_email=False)
+            if checks["sheet_read_write"] != "READ_WRITE_VERIFIED":
+                raise ValueError("DOCTOR_SHEET_WRITE_VERIFICATION_FAILED")
+            emit(
+                {
+                    "status": "WIF_SHEET_READ_WRITE_VERIFIED",
+                    "source_fetches": 0,
+                    "mail_sent": False,
+                    "probe_restored": True,
+                }
+            )
+            return
+        if verify_write:
+            raise ValueError("WRITE_PROBE_REQUIRES_DOCTOR_MODE")
         manual_setup = not settings.tracker_enabled and manual_dispatch and dry and not send
         if not settings.tracker_enabled and not manual_setup:
             if manual_dispatch:

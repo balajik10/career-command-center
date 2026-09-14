@@ -375,6 +375,102 @@ def test_enabled_production_retains_readiness_and_scheduler_gates(
     assert "SCHEDULED_READINESS_BLOCKED" in invoke(["run-scheduled"], expected=1)["error"]
 
 
+def test_disabled_manual_doctor_verifies_wif_only(monkeypatch: pytest.MonkeyPatch) -> None:
+    config = settings(
+        github_actions=True,
+        tracker_enabled=False,
+        budget_verified_at=datetime.now(UTC),
+        included_private_minutes_remaining=2000,
+        paid_overage_disabled=True,
+    )
+    monkeypatch.setattr(cli, "Settings", lambda: config)
+    monkeypatch.setenv("GITHUB_EVENT_NAME", "workflow_dispatch")
+    for key, value in {
+        "INPUT_MODE": "doctor",
+        "INPUT_DRY_RUN": "false",
+        "INPUT_SEND_ALERTS": "false",
+        "INPUT_VERIFY_WRITE": "true",
+    }.items():
+        monkeypatch.setenv(key, value)
+    calls: list[object] = []
+    monkeypatch.setattr(cli, "require_github_wif", lambda actual: calls.append(actual))
+
+    def verified(*args: Any, **kwargs: Any) -> dict[str, str]:
+        calls.append(kwargs)
+        return {"sheet_read_write": "READ_WRITE_VERIFIED"}
+
+    def forbidden(*args: Any, **kwargs: Any) -> None:
+        raise AssertionError("Doctor must not fetch sources or send mail")
+
+    monkeypatch.setattr(cli, "readiness", verified)
+    monkeypatch.setattr(cli, "scan", forbidden)
+    monkeypatch.setattr(cli, "live_outbox", forbidden)
+    assert invoke(["run-scheduled"]) == {
+        "status": "WIF_SHEET_READ_WRITE_VERIFIED",
+        "source_fetches": 0,
+        "mail_sent": False,
+        "probe_restored": True,
+    }
+    assert calls == [config, {"verify_write": True, "verify_email": False}]
+    monkeypatch.setattr(
+        cli, "readiness", lambda *args, **kwargs: {"sheet_read_write": "AUTH_OR_SHEET_UNAVAILABLE"}
+    )
+    assert (
+        invoke(["run-scheduled"], expected=1)["error"] == "DOCTOR_SHEET_WRITE_VERIFICATION_FAILED"
+    )
+
+
+@pytest.mark.parametrize(
+    ("config_updates", "env_updates", "error"),
+    [
+        ({"tracker_enabled": True}, {}, "DOCTOR_REQUIRES_DISABLED_MANUAL_GITHUB_RUN"),
+        ({}, {"GITHUB_EVENT_NAME": "schedule"}, "DOCTOR_REQUIRES_DISABLED_MANUAL_GITHUB_RUN"),
+        ({"github_actions": False}, {}, "DOCTOR_REQUIRES_DISABLED_MANUAL_GITHUB_RUN"),
+        ({}, {"INPUT_DRY_RUN": "true"}, "DOCTOR_REQUIRES_EXPLICIT_WRITE_PROBE_NO_SEND"),
+        ({}, {"INPUT_SEND_ALERTS": "true"}, "DOCTOR_REQUIRES_EXPLICIT_WRITE_PROBE_NO_SEND"),
+        ({}, {"INPUT_SOURCE": "one-source"}, "DOCTOR_REQUIRES_EXPLICIT_WRITE_PROBE_NO_SEND"),
+        ({}, {"INPUT_VERIFY_WRITE": "false"}, "DOCTOR_REQUIRES_EXPLICIT_WRITE_PROBE_NO_SEND"),
+        ({"zero_cost_mode": False}, {}, "DOCTOR_BUDGET_OR_ZERO_COST_BLOCKED"),
+        ({"paid_overage_disabled": False}, {}, "DOCTOR_BUDGET_OR_ZERO_COST_BLOCKED"),
+        ({}, {"INPUT_MODE": "incremental"}, "WRITE_PROBE_REQUIRES_DOCTOR_MODE"),
+    ],
+)
+def test_manual_doctor_gates_precede_all_live_access(
+    monkeypatch: pytest.MonkeyPatch,
+    config_updates: dict[str, Any],
+    env_updates: dict[str, str],
+    error: str,
+) -> None:
+    config = settings(
+        **(
+            {
+                "github_actions": True,
+                "tracker_enabled": False,
+                "budget_verified_at": datetime.now(UTC),
+                "included_private_minutes_remaining": 2000,
+                "paid_overage_disabled": True,
+            }
+            | config_updates
+        )
+    )
+    monkeypatch.setattr(cli, "Settings", lambda: config)
+    for key, value in (
+        {
+            "GITHUB_EVENT_NAME": "workflow_dispatch",
+            "INPUT_MODE": "doctor",
+            "INPUT_DRY_RUN": "false",
+            "INPUT_SEND_ALERTS": "false",
+            "INPUT_VERIFY_WRITE": "true",
+        }
+        | env_updates
+    ).items():
+        monkeypatch.setenv(key, value)
+    monkeypatch.setattr(
+        cli, "readiness", lambda *args, **kwargs: pytest.fail("Unexpected live verification")
+    )
+    assert invoke(["run-scheduled"], expected=1)["error"] == error
+
+
 def test_validation_error_does_not_echo_private_input(monkeypatch: pytest.MonkeyPatch) -> None:
     def bad() -> Settings:
         return Settings(_env_file=None, monthly_plan_minutes="private-string-never-log")

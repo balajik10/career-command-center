@@ -20,6 +20,10 @@ name: Private runtime implementation
         required: false
         default: false
         type: boolean
+      verify_write:
+        required: false
+        default: false
+        type: boolean
     secrets:
       GOOGLE_SHEET_ID:
         required: false
@@ -68,6 +72,7 @@ jobs:
       INPUT_DRY_RUN: ${{ inputs.dry_run }}
       INPUT_SOURCE: ${{ inputs.source }}
       INPUT_SEND_ALERTS: ${{ inputs.send_alerts }}
+      INPUT_VERIFY_WRITE: ${{ inputs.verify_write }}
     steps:
       - name: Validate caller inputs
         shell: bash
@@ -76,12 +81,17 @@ jobs:
           import os, re
           if not re.fullmatch(r'[0-9a-f]{40}', os.environ['IMPLEMENTATION_SHA']) or set(os.environ['IMPLEMENTATION_SHA']) == {'0'}:
               raise SystemExit('SETUP_REQUIRED_IMPLEMENTATION_SHA')
-          if os.environ['INPUT_MODE'] not in {'incremental', 'full', 'morning', 'evening', 'maintenance'}:
+          if os.environ['INPUT_MODE'] not in {'incremental', 'full', 'morning', 'evening', 'maintenance', 'doctor'}:
               raise SystemExit('INVALID_MODE')
           if not re.fullmatch(r'[a-zA-Z0-9_-]{0,100}', os.environ['INPUT_SOURCE']):
               raise SystemExit('INVALID_SOURCE')
           if os.environ['INPUT_DRY_RUN'] == 'true' and os.environ['INPUT_SEND_ALERTS'] == 'true':
               raise SystemExit('DRY_RUN_CANNOT_SEND')
+          if os.environ['INPUT_MODE'] == 'doctor':
+              if os.environ['INPUT_DRY_RUN'] != 'false' or os.environ['INPUT_SEND_ALERTS'] != 'false' or os.environ['INPUT_VERIFY_WRITE'] != 'true' or os.environ['INPUT_SOURCE']:
+                  raise SystemExit('DOCTOR_REQUIRES_EXPLICIT_WRITE_PROBE_NO_SEND')
+          elif os.environ['INPUT_VERIFY_WRITE'] == 'true':
+              raise SystemExit('WRITE_PROBE_REQUIRES_DOCTOR_MODE')
           PY
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -113,6 +123,9 @@ jobs:
           APP_TIMEZONE: Asia/Kolkata
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
           GOOGLE_SERVICE_ACCOUNT_JSON_B64: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON_B64 }}
+          SHEETS_AUTH_MODE: ${{ vars.SHEETS_AUTH_MODE }}
+          WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
+          WIF_SERVICE_ACCOUNT: ${{ secrets.WIF_SERVICE_ACCOUNT }}
           PRIVATE_PROFILE_YAML_B64: ${{ secrets.PRIVATE_PROFILE_YAML_B64 }}
           PRIVACY_HMAC_KEY: ${{ secrets.PRIVACY_HMAC_KEY }}
           PRIVACY_HMAC_KEY_VERSION: ${{ vars.PRIVACY_HMAC_KEY_VERSION || 'v1' }}
