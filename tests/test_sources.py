@@ -457,28 +457,34 @@ def test_wire_ip_pinning_and_gzip_caps():
 
 
 def test_wire_slow_drip_deadline_shuts_down_socket():
-    import threading
+    from socket import SHUT_RDWR
 
-    stopped = threading.Event()
+    clock = [100.0]
     conn = MagicMock()
-    conn.sock.shutdown.side_effect = lambda _: stopped.set()
+    timer = MagicMock()
     raw = MagicMock()
     conn.getresponse.return_value = raw
     raw.getheaders.return_value = [("Content-Type", "application/json")]
 
     def slow_read(_):
-        assert stopped.wait(0.5)
+        delay, callback, args = timer_factory.call_args.args
+        assert delay == 30
+        timer.start.assert_called_once_with()
+        clock[0] += delay
+        callback(*args)
         return b"x"
 
     raw.read1.side_effect = slow_read
-    started = time.monotonic()
     with (
         patch("career_radar.fetch._PinnedHTTPS", return_value=conn),
+        patch("career_radar.fetch.time.monotonic", side_effect=lambda: clock[0]),
+        patch("career_radar.fetch.threading.Timer", return_value=timer) as timer_factory,
         pytest.raises(TimeoutError, match="DEADLINE"),
     ):
-        wire_get("https://jobs.example.com/", "1.1.1.1", {}, 0.02, MAX_BYTES)
-    assert time.monotonic() - started < 0.5
-    conn.sock.shutdown.assert_called_once()
+        wire_get("https://jobs.example.com/", "1.1.1.1", {}, 30, MAX_BYTES)
+    conn.sock.shutdown.assert_called_once_with(SHUT_RDWR)
+    timer.cancel.assert_called_once_with()
+    conn.close.assert_called_once_with()
 
 
 def test_wire_http_encoding_content_length_truncation_and_stream_caps():
