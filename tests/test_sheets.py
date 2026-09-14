@@ -345,7 +345,9 @@ def test_google_rest_bootstrap_headers_protection_and_idempotency() -> None:
     )
 
 
-def test_google_unknown_nonempty_mismatch_and_http_budget() -> None:
+def test_google_unknown_nonempty_mismatch_and_http_budget(monkeypatch: pytest.MonkeyPatch) -> None:
+    # A newly booted CI runner can have monotonic uptime below the one-minute window.
+    monkeypatch.setattr("career_radar.sheets.workbook.time.monotonic", lambda: 100.0)
     http = SheetsHTTP()
     http.sheets["Existing"] = 0
     http.grid["Existing"] = [["user value"]]
