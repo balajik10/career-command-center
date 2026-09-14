@@ -25,6 +25,8 @@ Manual Actions dispatch validates mode, source, dry-run and send flags. Defaults
 
 A lookback override is not supported by the v1 connector contract and is not exposed as a workflow input. Use `mode=full` for bounded full reconciliation of current official inventories. Legacy `INPUT_LOOKBACK_HOURS` values are explicitly rejected rather than silently ignored.
 
+Manual `mode=doctor` is a separate setup action with no schedule. It requires tracking disabled, `dry_run=false`, `verify_write=true`, `send_alerts=false`, and an empty source filter. It also requires current budget/zero-cost checks and the workflow's WIF service-account credential file, rejecting local ADC and service-account-key fallback. The probe changes one system marker metadata cell, reads it back, restores its original value, and verifies restoration; it does not add run-log rows, collect sources, or refresh/send Gmail. A failed restoration cannot report success. Keep tracking disabled and inspect the private Sheet if verification fails. This mode shares the existing single-writer concurrency group and bounded four-minute manual timeout.
+
 The private caller's sole `career-command-center-production` concurrency group uses `queue: max`. It does not cancel an active writer, and the reusable workflow does not repeat that group. No runtime job matrix, automatic rerun or production artifact upload is configured. Runtime permission is `contents: read` plus `id-token: write` for Sheets federation. Secret-bearing execution is limited to the expected private-runtime repository owner and main ref for schedule/manual events.
 
 ## Local fallback

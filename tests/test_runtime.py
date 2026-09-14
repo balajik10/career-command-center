@@ -4,6 +4,7 @@ import base64
 import json
 from datetime import UTC, datetime, timedelta
 from email.utils import format_datetime
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -140,6 +141,93 @@ def test_read_only_setup_readiness_does_not_touch_sender_credentials(
     checked = runtime.readiness(settings(), verify_write=False, verify_email=False, now=NOW)
     assert checked["sheet_read_write"] == "READ_VERIFIED_WRITE_NOT_PROBED"
     assert checked["email_send"] == "SETUP_REQUIRED" and book.write_requests == writes
+
+
+def test_sheet_write_probe_restores_original_cell_and_business_state() -> None:
+    book = demo_book()
+    marker = next(row for row in book.tabs["_System_State"] if row["key"] == "project_marker")
+    marker["updated_at"] = "original-marker-value"
+    before = json.dumps(book.tabs, sort_keys=True)
+    writes = book.write_requests
+    runtime.verify_sheet_write(book)
+    assert book.write_requests == writes + 2
+    assert json.dumps(book.tabs, sort_keys=True) == before
+    book.fail_on_write = book.write_requests + 1
+    with pytest.raises(RuntimeError, match="INJECTED_WRITE_FAILURE"):
+        runtime.verify_sheet_write(book)
+    assert json.dumps(book.tabs, sort_keys=True) == before
+
+
+def test_write_probe_readback_and_restore_failures_are_not_success(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    book = demo_book()
+    actual_read = book.read_tab
+    calls = 0
+
+    def stale_read(name: str) -> list[dict[str, Any]]:
+        nonlocal calls
+        calls += 1
+        rows = actual_read(name)
+        if calls == 2:
+            rows[0]["updated_at"] = "unexpected"
+        return rows
+
+    monkeypatch.setattr(book, "read_tab", stale_read)
+    with pytest.raises(ValueError, match="WRITE_PROBE_READBACK_FAILED"):
+        runtime.verify_sheet_write(book)
+    assert actual_read("_System_State")[0].get("updated_at", "") == ""
+    monkeypatch.setattr(book, "read_tab", actual_read)
+    book.fail_on_write = book.write_requests + 2
+    monkeypatch.setattr(runtime, "live_book", lambda *args: book)
+    checked = runtime.readiness(settings(), verify_write=True, verify_email=False, now=NOW)
+    assert checked["sheet_read_write"] == "AUTH_OR_SHEET_UNAVAILABLE"
+
+
+def test_manual_doctor_requires_real_federated_credential_configuration(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    path = tmp_path / "wif.json"
+    good = {
+        "type": "external_account",
+        "audience": "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/test/providers/test",
+        "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@example.iam.gserviceaccount.com:generateAccessToken",
+    }
+    path.write_text(json.dumps(good))
+    monkeypatch.setenv("SHEETS_AUTH_MODE", "wif")
+    monkeypatch.setenv("GOOGLE_APPLICATION_CREDENTIALS", str(path))
+    monkeypatch.setenv("WIF_PROVIDER", good["audience"].removeprefix("//iam.googleapis.com/"))
+    monkeypatch.setenv("WIF_SERVICE_ACCOUNT", "test@example.iam.gserviceaccount.com")
+    config = settings(github_actions=True)
+    runtime.require_github_wif(config)
+    for modified in (
+        {"type": "authorized_user"},
+        {"audience": "wrong"},
+        {"service_account_impersonation_url": ""},
+    ):
+        path.write_text(json.dumps(good | modified))
+        with pytest.raises(ValueError, match="DOCTOR_REQUIRES_GITHUB_WIF"):
+            runtime.require_github_wif(config)
+    for body in ("[]", "not-json", "x" * 100_001):
+        path.write_text(body)
+        with pytest.raises(ValueError, match="DOCTOR_REQUIRES_GITHUB_WIF"):
+            runtime.require_github_wif(config)
+    path.unlink()
+    with pytest.raises(ValueError, match="DOCTOR_REQUIRES_GITHUB_WIF"):
+        runtime.require_github_wif(config)
+    monkeypatch.delenv("GOOGLE_APPLICATION_CREDENTIALS")
+    with pytest.raises(ValueError, match="DOCTOR_REQUIRES_GITHUB_WIF"):
+        runtime.require_github_wif(config)
+    for modified in (
+        settings(github_actions=False),
+        settings(github_actions=True, google_service_account_json_b64="synthetic"),
+    ):
+        with pytest.raises(ValueError, match="DOCTOR_REQUIRES_GITHUB_WIF"):
+            runtime.require_github_wif(modified)
+    monkeypatch.setenv("SHEETS_AUTH_MODE", "key")
+    with pytest.raises(ValueError, match="DOCTOR_REQUIRES_GITHUB_WIF"):
+        runtime.require_github_wif(config)
 
 
 def test_google_credentials_and_sheet_budget(monkeypatch: pytest.MonkeyPatch) -> None:

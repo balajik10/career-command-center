@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import base64
 import json
+import os
 import time
 import uuid
 from collections.abc import Callable
@@ -28,7 +29,12 @@ from career_radar.orchestration.pipeline import (
 )
 from career_radar.orchestration.planner import BUDGETS, plan_sources
 from career_radar.settings import Settings
-from career_radar.sheets import GoogleSheetsWorkbook, google_authenticated_session
+from career_radar.sheets import (
+    SCHEMA,
+    BaseWorkbook,
+    GoogleSheetsWorkbook,
+    google_authenticated_session,
+)
 from career_radar.sheets.workbook import Session
 from career_radar.sources.registry import load_catalogue
 
@@ -122,27 +128,7 @@ def readiness(
                 "READ_VERIFIED_WRITE_NOT_PROBED" if not errors else "SCHEMA_REPAIR_REQUIRED"
             )
             if not errors and verify_write:
-                run_uid = "doctor:" + str(uuid.uuid4())
-                book.transaction(
-                    {
-                        "_System_State": [
-                            {
-                                "key": "doctor_write_probe",
-                                "value": now.isoformat(),
-                                "run_uid": run_uid,
-                            }
-                        ],
-                        "Run_Log": [
-                            {
-                                "run_uid": run_uid,
-                                "mode": "doctor",
-                                "status": "COMMITTED",
-                                "completed_at": now.isoformat(),
-                            }
-                        ],
-                    },
-                    run_uid,
-                )
+                verify_sheet_write(book)
                 result["sheet_read_write"] = "READ_WRITE_VERIFIED"
         except Exception:
             result["sheet_read_write"] = "AUTH_OR_SHEET_UNAVAILABLE"
@@ -177,6 +163,59 @@ def readiness(
             elif not settings.zero_cost_mode:
                 result["scheduled_run"] = "BLOCKED_ZERO_COST_MODE_DISABLED"
     return result
+
+
+def verify_sheet_write(book: BaseWorkbook) -> None:
+    """Probe and restore one system metadata cell; never modify business rows."""
+    rows = book.read_tab("_System_State")
+    index = next(i for i, row in enumerate(rows) if row.get("key") == "project_marker")
+    field = "updated_at"
+    column = SCHEMA["_System_State"].columns.index(field) + 1
+    previous = rows[index].get(field, "")
+    token = "doctor:" + str(uuid.uuid4())
+    cell = ("_System_State", index + 2, column)
+    try:
+        book.write_cells([(*cell, token)])
+        if book.read_tab("_System_State")[index].get(field) != token:
+            raise ValueError("WRITE_PROBE_READBACK_FAILED")
+    finally:
+        # Restore even after an ambiguous first write. The same cell and original
+        # value are used, so a failed probe never leads to an automatic send.
+        book.write_cells([(*cell, previous)])
+    if book.read_tab("_System_State")[index].get(field, "") != previous:
+        raise ValueError("WRITE_PROBE_RESTORE_FAILED")
+
+
+def require_github_wif(settings: Settings) -> None:
+    """Require the federated credential file produced by the private workflow."""
+    if (
+        not settings.github_actions
+        or os.getenv("SHEETS_AUTH_MODE") != "wif"
+        or settings.google_service_account_json_b64.get_secret_value()
+    ):
+        raise ValueError("DOCTOR_REQUIRES_GITHUB_WIF")
+    credential_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "")
+    provider = os.getenv("WIF_PROVIDER", "")
+    account = os.getenv("WIF_SERVICE_ACCOUNT", "")
+    try:
+        path = Path(credential_path)
+        if not credential_path or not provider or not account or path.stat().st_size > 100_000:
+            raise ValueError("INVALID_WIF_CONFIGURATION")
+        data = json.loads(path.read_text())
+        if (
+            not isinstance(data, dict)
+            or data.get("type") != "external_account"
+            or data.get("audience") != "//iam.googleapis.com/" + provider
+            or data.get("service_account_impersonation_url")
+            != (
+                "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/"
+                + account
+                + ":generateAccessToken"
+            )
+        ):
+            raise ValueError("INVALID_WIF_CONFIGURATION")
+    except (OSError, ValueError, TypeError):
+        raise ValueError("DOCTOR_REQUIRES_GITHUB_WIF") from None
 
 
 def catalogue_path() -> Path:

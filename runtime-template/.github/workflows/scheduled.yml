@@ -17,7 +17,7 @@ name: Career Command Center private schedule
     inputs:
       mode:
         type: choice
-        options: [incremental, full, morning, evening, maintenance]
+        options: [incremental, full, morning, evening, maintenance, doctor]
         default: incremental
         required: true
       dry_run:
@@ -27,6 +27,10 @@ name: Career Command Center private schedule
         type: string
         default: ''
       send_alerts:
+        type: boolean
+        default: false
+      verify_write:
+        description: 'Doctor only: explicitly write and restore one Sheet system marker'
         type: boolean
         default: false
 permissions:
@@ -55,6 +59,7 @@ jobs:
       dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
       source: ${{ inputs.source || '' }}
       send_alerts: ${{ github.event_name == 'schedule' || inputs.send_alerts || false }}
+      verify_write: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_write || false }}
     secrets:
       GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
       WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
